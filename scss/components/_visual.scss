@@ -1,0 +1,56 @@
+.visual {
+  position: relative;
+  overflow: hidden;
+  font-size: 36px;
+  font-weight: 600;
+  padding: 260px 0 218px;
+  color: $sky-blue;
+
+  @include media('<desktop') {
+    padding: 160px 0 98px;
+    font-size: 30px;
+  }
+
+  @include media('<tablet') {
+    @include font-size(20px, 24px);
+
+    padding: 140px 0 48px;
+  }
+
+  &__h1 {
+    font-weight: 800;
+    color: $white;
+    text-transform: uppercase;
+  }
+
+  &__p {
+    margin: 0 0 22px;
+    max-width: 540px;
+  }
+
+  &__btn {
+
+    text-transform: uppercase;
+
+    background: $orange;
+    border-width: 3px;
+    border-color: $white;
+    color: $white;
+
+    &:hover {
+      color: $white;
+      background: darken($orange, 20%);
+      transition: background 0.3s ease;
+    }
+  }
+
+  &__wrap {
+    max-width: 640px;
+  }
+
+  &__container {
+    margin: 0 auto;
+    padding: 0 15px;
+    max-width: 1218px;
+  }
+}

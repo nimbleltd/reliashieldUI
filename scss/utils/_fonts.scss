@@ -1,0 +1,15 @@
+@font-face {
+  @include fontface(proximanova, proximanova-black-webfont, 900, normal);
+}
+@font-face {
+  @include fontface(proximanova, proximanova-bold-webfont, 700, normal);
+}
+@font-face {
+  @include fontface(proximanova, proximanova-light-webfont,300, normal);
+}
+@font-face {
+  @include fontface(proximanova, proximanova-regular-webfont, 400, normal);
+}
+@font-face {
+  @include fontface(proximanova, proximanova-semibold-webfont, 600, normal);
+}

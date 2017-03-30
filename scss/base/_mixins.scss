@@ -1,0 +1,180 @@
+// clearfix
+%clearfix {
+  &:after {
+  content: " ";
+  display: block;
+  clear: both;
+  }
+}
+
+// hide text
+@mixin hide-text {
+  overflow: hidden;
+  text-indent: -9999px;
+}
+
+@mixin img{
+  width: 100%;
+  height: auto;
+  vertical-align: top;
+}
+
+// alignment text
+@mixin alignment($value1: inline-block, $value2: top) {
+  display: $value1;
+  vertical-align: $value2;
+}
+
+@mixin font-size($value1, $value2: 1.25) {
+  font-size: $value1;
+  line-height: $value2;
+}
+
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin square($value1) {
+  width: $value1;
+  height: $value1;
+}
+
+@mixin position-zero($value: 0){
+  top: $value;
+  left: $value;
+  right: $value;
+  bottom: $value;
+}
+
+@mixin rgba-color($hexcolor, $opacity){
+  color: $hexcolor;
+  color: rgba($hexcolor, $opacity);
+}
+
+
+@mixin rgba-background($hexcolor, $opacity) {
+  background-color: $hexcolor;
+  background-color: rgba($hexcolor, $opacity);
+}
+
+// custom font mixin
+@mixin fontface ($fontfamily, $filename, $weight, $style) {
+  font-family: $fontfamily;
+  src: url('../fonts/#{$filename}.eot');
+  src: url('../fonts/#{$filename}.eot?#iefix') format('embedded-opentype'),
+     url('../fonts/#{$filename}.woff') format('woff'),
+     url('../fonts/#{$filename}.ttf') format('truetype'),
+     url('../fonts/#{$filename}.svg#{$filename}') format('svg');
+  font-weight: $weight;
+  font-style: $style;
+}
+
+// Animation
+@mixin animation($value) {
+  -webkit-transition:$value;
+  transition:$value;
+}
+
+@mixin transform ($deg) {
+  transform: $deg;
+  -moz-transform: $deg;
+  -ms-transform: $deg;
+  -o-transform: $deg;
+  -webkit-transform: $deg;
+}
+
+// some CSS3 style
+@mixin css3($property, $value) {
+  @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {
+      #{$prefix}#{$property}: $value;
+  }
+}
+
+// placeholder
+@mixin placeholder($color: $placeholder-color) {
+  &:-moz-placeholder        { color: $color; opacity: 1; }
+  &::-moz-placeholder       { color: $color; opacity: 1; }
+  &:-ms-input-placeholder     { color: $color; }
+  &::-webkit-input-placeholder  { color: $color; }
+}
+
+// centeralign
+@mixin centeralign($width) {
+  left: 50%;
+  display: block;
+  width: $width;
+  position: relative;
+  margin-left: -$width/2;
+}
+
+// bg-stretch
+@mixin bg-stretch{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+// reset for before and after
+@mixin pseudo-elements($before-top, $before-right, $before-bottom, $before-left){
+  content:"";
+  position:absolute;
+  top:$before-top;
+  left:$before-left;
+  right:$before-right;
+  bottom:$before-bottom;
+}
+
+// icomoon usage
+@mixin icon($content){
+  font-family: 'icomoon';
+  content: $content;
+  font-weight: normal;
+}
+
+// vertical alignment
+@mixin inline($alignment){
+  display:inline-block;
+  vertical-align:$alignment;
+}
+@mixin img-full-width {
+  width: 100%;
+  max-width: inherit;
+  height: auto;
+  display: block;
+}
+// font-size
+@mixin font($size, $line: 1.25) {
+  font-size: $size;
+  line-height: $line;
+}
+
+@mixin link-color($color) {
+  color: $color;
+  text-decoration: none;
+  &:hover {
+    color: darken($color, 15%);
+  }
+}
+@mixin bg-hover($color) {
+  background-color: $color;
+  &:hover {
+    background-color: darken($color, 10%);
+  }
+}
+@mixin position($value) {
+  top: $value;
+  left: $value;
+  right: $value;
+  bottom: $value;
+  position: absolute;
+}
+@mixin custom-icon($icon) {
+  &:before {
+    font-family: 'icomoon';
+    content: $icon;
+  }
+}
